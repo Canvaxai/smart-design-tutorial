@@ -1,15 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://tomokazu-hoshi.github.io/index.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://tomokazu-hoshi.github.io/recommend.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url><loc>https://tomokazu-hoshi.github.io/01.html</loc><priority>0.7</priority></url>
-  <url><loc>https://tomokazu-hoshi.github.io/100.html</loc><priority>0.7</priority></url>
-</urlset>
+/* Base Styles */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    background-color: #fcfcfc;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a2a3a;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+.main-header h1 { margin: 0; font-size: 1.8rem; }
+
+/* Category Grid (Index Page) */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+.category-card-box {
+    display: block;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 30px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+.category-card-box:hover {
+    border-color: #f39c12;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.card-title {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: #1a2a3a;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 10px;
+}
+.card-preview {
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+.range-text { font-weight: bold; color: #f39c12; margin-top: 5px; }
+.btn-detail {
+    display: inline-block;
+    color: #f39c12;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* Post Content Styling */
+.post-content h1 { font-size: 1.8rem; color: #1a2a3a; margin-bottom: 30px; }
+.post-content h2 { font-size: 1.4rem; color: #1a2a3a; margin-top: 40px; }
+.post-content h3 { font-size: 1.2rem; color: #1a2a3a; margin-top: 30px; }
+.post-content p { margin-bottom: 20px; font-size: 1.05rem; }
+
+/* Footer Sub Link Styling */
+.footer-sub-link a:hover {
+    color: #f39c12 !important;
+    text-decoration: underline !important;
+}
+
+/* Footer */
+.main-footer { text-align: center; padding: 60px 0; background: #f8f8f8; color: #999; font-size: 0.8rem; }
