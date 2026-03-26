@@ -18,6 +18,7 @@
             margin: 0 auto;
             padding: 20px;
         }
+        /* [章目次] 用スタイル */
         .back-to-top {
             display: inline-block;
             color: #d4a017;
@@ -26,18 +27,52 @@
             margin-bottom: 25px;
             font-weight: bold;
         }
-        .chapter-title {
+        .chapter-header {
+            margin-bottom: 30px;
+        }
+        .chapter-title-label {
             font-size: 26px;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #333;
-            line-height: 1.3;
         }
         .lead-text {
             font-size: 15px;
             color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
+        /* [H1] 用スタイル */
+        h1 {
+            font-size: 24px;
+            margin: 40px 0 20px;
+            color: #333;
+            border-bottom: 3px solid #d4a017;
+            padding-bottom: 10px;
+        }
+        /* [SEO本文] 用スタイル */
+        .seo-body {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        /* [前後ナビ] 用スタイル */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        .nav-buttons a {
+            color: #d4a017;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid #d4a017;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        /* [章内記事リスト] 用スタイル（カードタイプ） */
         .article-card {
             background: #fff;
             border-radius: 12px;
@@ -73,6 +108,7 @@
             color: #ccc;
             font-size: 20px;
         }
+        /* [フッター] 用スタイル */
         .footer {
             text-align: center;
             margin-top: 60px;
@@ -80,17 +116,40 @@
             color: #888;
             font-size: 13px;
         }
+        .migration-guide {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            line-height: 1.5;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <a href="index.html" class="back-to-top">← トップページへ戻る</a>
-    
-    <h1 class="chapter-title">第2章：AIコンテンツ・エンジニアリング編</h1>
-    <p class="lead-text">AIを活用して、読者の心を動かす高品質なコンテンツを爆速で生み出すための全20ステップです。</p>
+    <div class="chapter-header">
+        <div class="chapter-title-label">第2章：AIコンテンツ・エンジニアリング編</div>
+        <p class="lead-text">AIを活用して、読者の心を動かす高品質なコンテンツを爆速で生み出すための全20ステップです。</p>
+    </div>
+
+    <h1>AIコンテンツ・エンジニアリング編</h1>
+
+    <div class="seo-body">
+        <p>インフラが整った後は、サイトの核となる「コンテンツ」の量産フェーズに入ります。AIを単なる代筆ツールではなく、読者の意図を解読し、共感を生むための「エンジニアリング対象」として捉えることが、個人の資産サイトを成功させる鍵となります。</p>
+        <p>本章では、キーワード選定から構成案の自動生成、そして人間の知見を融合させた最終的なライティング術まで、AI時代に勝つための具体的な執筆プロセスをマスターしましょう。</p>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="chapter1.html">← 第1章へ</a>
+        <a href="chapter3.html">第3章へ →</a>
+    </div>
 
     <div class="article-list">
+        <h3 style="font-size: 18px; margin-bottom: 20px;">第2章 全20記事リスト</h3>
         <a href="16.html" class="article-card"><span class="article-num">16</span><span class="article-name">AIコンテンツ・エンジニアリングの極意</span><span class="arrow">→</span></a>
         <a href="17.html" class="article-card"><span class="article-num">17</span><span class="article-name">読者の検索意図をAIで完璧に解読する</span><span class="arrow">→</span></a>
         <a href="18.html" class="article-card"><span class="article-num">18</span><span class="article-name">心を動かすAIライティング：共感の設計図</span><span class="arrow">→</span></a>
@@ -113,7 +172,14 @@
         <a href="35.html" class="article-card"><span class="article-num">35</span><span class="article-name">第2章まとめ：AIを使いこなし高品質な記事を量産する</span><span class="arrow">→</span></a>
     </div>
 
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="index.html" style="color: #d4a017; text-decoration: none; font-weight: bold;">[トップページへ戻る]</a>
+    </div>
+
     <div class="footer">
+        <div class="migration-guide">
+            【移行ガイド】WordPressなどのCMSから静的サイトへ移行した後は、記事のファイル名を「16.html」のように半角数字で統一することで、AIが内部リンクを自動で正確に生成しやすくなります。
+        </div>
         <p>© 2026 Zero-Cost SEO - 星 友和</p>
     </div>
 </div>
