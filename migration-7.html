@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H56XHD5MLW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H56XHD5MLW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. WordPressのインストールと初期セキュリティ設定 | WordPress移行ガイド</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #f0f7ff; color: #333; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        
+        /* パンくずリスト */
+        .breadcrumb { font-size: 0.8rem; margin-bottom: 20px; color: #7f8c8d; }
+        .breadcrumb a { text-decoration: none; color: #3498db; }
+
+        /* 章のイントロ */
+        .chapter-intro-mini { background: #3498db; color: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; }
+        .chapter-intro-mini small { font-size: 0.75rem; opacity: 0.9; }
+        .chapter-intro-mini h2 { font-size: 1.1rem; margin: 5px 0; }
+        .chapter-intro-mini p { font-size: 0.85rem; opacity: 0.9; margin-top: 5px; }
+
+        /* 記事コンテンツ */
+        .post-content { background: white; padding: 25px 20px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .post-content h1 { font-size: 1.3rem; color: #2c3e50; margin-bottom: 20px; border-bottom: 3px solid #f0f7ff; padding-bottom: 10px; }
+        .post-content h3 { font-size: 1.05rem; color: #3498db; margin: 25px 0 10px; border-left: 4px solid #3498db; padding-left: 10px; }
+        .post-content p { margin-bottom: 15px; font-size: 0.95rem; }
+        .post-content strong { color: #d35400; }
+        
+        /* アクションBOX */
+        .action-box { background: #e1f5fe; border: 1px solid #b3e5fc; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .action-box strong { color: #0288d1; display: block; margin-bottom: 5px; }
+
+        /* ナビボタン */
+        .post-nav-buttons { display: flex; gap: 10px; margin-bottom: 40px; }
+        .btn-nav { flex: 1; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        .btn-prev { background: #eee; color: #666; }
+        .btn-next { background: #3498db; color: white; }
+
+        /* 章内リスト */
+        .chapter-list-mini { margin-top: 30px; }
+        .chapter-list-mini h3 { font-size: 0.9rem; margin-bottom: 15px; color: #7f8c8d; }
+        .mini-card { display: flex; align-items: center; background: white; border: 1px solid #e1e8ed; padding: 12px 15px; border-radius: 8px; text-decoration: none; color: #333; margin-bottom: 10px; font-size: 0.85rem; }
+        .mini-card span { color: #3498db; font-weight: bold; margin-right: 10px; }
+        .mini-card.current { border: 2px solid #3498db; background: #f0faff; }
+
+        /* 下部メニューリンク */
+        .footer-menu-link { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .footer-menu-link a { color: #3498db; font-weight: bold; text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<main class="container">
+    <nav class="breadcrumb">
+        <a href="index.html">TOP</a> ＞ 
+        <a href="migration-guide.html">移行ガイド</a> ＞ 
+        <a href="migration-ch2.html">第2章</a>
+    </nav>
+
+    <section class="chapter-intro-mini">
+        <small>第2章：インフラ準備編</small>
+        <h2>WordPressのインストールと初期設定</h2>
+        <p>「爆速インストール」から、鉄壁の守りを固める初期設定まで。資産を守るための必須作業です。</p>
+    </section>
+
+    <article class="post-content">
+        <h1>7. WordPressのインストールと初期セキュリティ設定</h1>
+        <p>ドメインの紐付けが完了したら、いよいよWordPressのインストールです。最近のレンタルサーバーには「WordPressかんたんインストール」機能が備わっており、数分でサイトを立ち上げることができます。しかし、インストール直後のWordPressは<strong>「無防備な状態」</strong>です。ここでは最低限必要な初期設定を解説します。</p>
+        
+        <h3>1. クイックインストールとユーザー名</h3>
+        <p>サーバー管理画面からインストールを行う際、ユーザー名を「admin」や「サイト名」にするのは絶対に避けてください。これらは攻撃者に推測されやすく、不正アクセスの原因となります。ランダムな英数字を組み合わせたユーザー名を設定しましょう。</p>
+
+        <h3>2. SSL（https化）の常時化</h3>
+        <p>GitHub Pagesでは自動だったSSL化も、サーバーでは設定が必要です。インストール直後に「設定 ＞ 一般」から、WordPressアドレスとサイトアドレスを<strong>「http」から「https」</strong>に書き換えてください。これを忘れると、Googleから「安全でないサイト」と警告されてしまいます。</p>
+
+        <h3>3. ログインURLの変更（セキュリティの核心）</h3>
+        <p>WordPressのログイン画面はデフォルトで `wp-login.php` です。これは世界中の攻撃者が知っている住所です。プラグインを使用して、このログインURLを自分だけが知る独自の名前に変更しましょう。これだけで、機械的な不正アタックの9割以上を防ぐことができます。</p>
+
+        <h3>4. パーマリンク設定の確認</h3>
+        <p>移行後のURL構造に大きく関わるのが「設定 ＞ パーマリンク」です。GitHubで運用していたHTMLファイル名と整合性を取るために、今のうちに設定を確認しておきます。第3章で詳しく解説しますが、まずは「投稿名」に設定しておくのが一般的です。</p>
+
+        <div class="action-box">
+            <strong>💡 この記事のあとのステップ：</strong>
+            <p style="font-size: 0.85rem; margin-top: 5px;">WordPressの管理画面（ダッシュボード）にログインし、サイトが「https://」で正常に表示されるか確認しましょう。</p>
+        </div>
+    </article>
+
+    <nav class="post-nav-buttons">
+        <a href="migration-6.html" class="btn-nav btn-prev">← 前へ</a>
+        <a href="migration-8.html" class="btn-nav btn-next">次へ →</a>
+    </nav>
+
+    <section class="chapter-list-mini">
+        <h3>第2章：記事一覧</h3>
+        <div class="card-list">
+            <a href="migration-5.html" class="mini-card"><span>5</span> 失敗しないレンタルサーバー選定</a>
+            <a href="migration-6.html" class="mini-card"><span>6</span> ドメイン管理の継続：紐付け変更</a>
+            <a href="migration-7.html" class="mini-card current"><span>7</span> WordPressインストールと初期設定</a>
+            <a href="migration-8.html" class="mini-card"><span>8</span> 移行に適した「SEO特化型テーマ」</a>
+        </div>
+    </section>
+
+    <div class="footer-menu-link">
+        <a href="migration-guide.html">
+            ← WordPress移行ガイド目次へ戻る
+        </a>
+    </div>
+</main>
+
+<footer style="text-align: center; padding: 40px 0; color: #999; font-size: 0.8rem;">
+    <p>&copy; 2026 Zero-Cost SEO - 星 友和</p>
+</footer>
+
+</body>
+</html>
