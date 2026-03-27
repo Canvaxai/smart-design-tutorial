@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H56XHD5MLW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H56XHD5MLW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. 移行に適した「SEO特化型テーマ」の選定基準 | WordPress移行ガイド</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #f0f7ff; color: #333; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        
+        /* パンくずリスト */
+        .breadcrumb { font-size: 0.8rem; margin-bottom: 20px; color: #7f8c8d; }
+        .breadcrumb a { text-decoration: none; color: #3498db; }
+
+        /* 章のイントロ */
+        .chapter-intro-mini { background: #3498db; color: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; }
+        .chapter-intro-mini small { font-size: 0.75rem; opacity: 0.9; }
+        .chapter-intro-mini h2 { font-size: 1.1rem; margin: 5px 0; }
+        .chapter-intro-mini p { font-size: 0.85rem; opacity: 0.9; margin-top: 5px; }
+
+        /* 記事コンテンツ */
+        .post-content { background: white; padding: 25px 20px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .post-content h1 { font-size: 1.3rem; color: #2c3e50; margin-bottom: 20px; border-bottom: 3px solid #f0f7ff; padding-bottom: 10px; }
+        .post-content h3 { font-size: 1.05rem; color: #3498db; margin: 25px 0 10px; border-left: 4px solid #3498db; padding-left: 10px; }
+        .post-content p { margin-bottom: 15px; font-size: 0.95rem; }
+        .post-content strong { color: #2980b9; }
+        
+        /* アクションBOX */
+        .action-box { background: #e1f5fe; border: 1px solid #b3e5fc; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .action-box strong { color: #0288d1; display: block; margin-bottom: 5px; }
+
+        /* ナビボタン */
+        .post-nav-buttons { display: flex; gap: 10px; margin-bottom: 40px; }
+        .btn-nav { flex: 1; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        .btn-prev { background: #eee; color: #666; }
+        .btn-next { background: #27ae60; color: white; } /* 章の終わりは緑 */
+
+        /* 章内リスト */
+        .chapter-list-mini { margin-top: 30px; }
+        .chapter-list-mini h3 { font-size: 0.9rem; margin-bottom: 15px; color: #7f8c8d; }
+        .mini-card { display: flex; align-items: center; background: white; border: 1px solid #e1e8ed; padding: 12px 15px; border-radius: 8px; text-decoration: none; color: #333; margin-bottom: 10px; font-size: 0.85rem; }
+        .mini-card span { color: #3498db; font-weight: bold; margin-right: 10px; }
+        .mini-card.current { border: 2px solid #3498db; background: #f0faff; }
+
+        /* 下部メニューリンク */
+        .footer-menu-link { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .footer-menu-link a { color: #3498db; font-weight: bold; text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<main class="container">
+    <nav class="breadcrumb">
+        <a href="index.html">TOP</a> ＞ 
+        <a href="migration-guide.html">移行ガイド</a> ＞ 
+        <a href="migration-ch2.html">第2章</a>
+    </nav>
+
+    <section class="chapter-intro-mini">
+        <small>第2章：インフラ準備編</small>
+        <h2>移行に適した「SEO特化型テーマ」の選定基準</h2>
+        <p>WordPressの最大の強みを引き出すテーマ選び。技術的なSEO対策を「自動化」する相棒を見つけましょう。</p>
+    </section>
+
+    <article class="post-content">
+        <h1>8. 移行に適した「SEO特化型テーマ」の選定基準</h1>
+        <p>WordPressには数万種類の「テーマ（デザインテンプレート）」が存在しますが、資産サイト構築においては見た目以上に<strong>「SEO内部対策」</strong>の充実度が重要です。GitHub Pagesで手動で行っていた構造化データ設定や高速化対策を、テーマ側に任せられるかどうかが成功の鍵を握ります。</p>
+        
+        <h3>1. 表示速度の速さ（Core Web Vitals）</h3>
+        <p>Googleの評価指標である「Core Web Vitals」に最適化されているテーマを選びましょう。コードが肥大化しておらず、画像遅延読み込み（Lazy Load）やCSSの最適化が標準で備わっているものが理想です。</p>
+
+        <h3>2. 構造化データへの標準対応</h3>
+        <p>検索結果にリッチリザルト（評価の星やQ&Aなど）を表示させるための構造化データ。これをプラグインなしで自動生成してくれるテーマを選ぶことで、サイトの信頼性とクリック率を劇的に高めることができます。</p>
+
+        <h3>3. 移行後の「リライト効率」</h3>
+        <p>100記事の移行後、最も時間を費やすのはメンテナンスです。吹き出し、比較表、ランキング作成といった装飾が<strong>「ブロックエディタ」</strong>で直感的に操作できるテーマ（SWELL、Cocoon、SANGOなど）を選ぶと、今後の運営コストが激減します。</p>
+
+        <h3>4. 日本語SEOへの最適化</h3>
+        <p>海外製の多機能テーマよりも、国内で開発されたテーマの方が日本語のフォント表示や、国内特有のSEO事情に精通しています。特に、コミュニティが活発で最新のSEOアップデートに即座に対応してくれる開発体制のものを選びましょう。</p>
+
+        <div class="action-box">
+            <strong>💡 第2章の総仕上げアクション：</strong>
+            <p style="font-size: 0.85rem; margin-top: 5px;">「WordPress SEOテーマ 比較」で検索し、自分の好みに合う国内テーマを1つ決めておきましょう。これで「器」の準備は完了です！</p>
+        </div>
+    </article>
+
+    <nav class="post-nav-buttons">
+        <a href="migration-7.html" class="btn-nav btn-prev">← 前へ</a>
+        <a href="migration-ch3.html" class="btn-nav btn-next">第3章 リストへ →</a>
+    </nav>
+
+    <section class="chapter-list-mini">
+        <h3>第2章：記事一覧</h3>
+        <div class="card-list">
+            <a href="migration-5.html" class="mini-card"><span>5</span> 失敗しないレンタルサーバー選定</a>
+            <a href="migration-6.html" class="mini-card"><span>6</span> ドメイン管理の継続：紐付け変更</a>
+            <a href="migration-7.html" class="mini-card"><span>7</span> WordPressインストールと初期設定</a>
+            <a href="migration-8.html" class="mini-card current"><span>8</span> 移行に適した「SEO特化型テーマ」</a>
+        </div>
+    </section>
+
+    <div class="footer-menu-link">
+        <a href="migration-guide.html">
+            ← WordPress移行ガイド目次へ戻る
+        </a>
+    </div>
+</main>
+
+<footer style="text-align: center; padding: 40px 0; color: #999; font-size: 0.8rem;">
+    <p>&copy; 2026 Zero-Cost SEO - 星 友和</p>
+</footer>
+
+</body>
+</html>
