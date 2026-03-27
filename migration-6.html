@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H56XHD5MLW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H56XHD5MLW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. ドメイン管理の継続：紐付け変更 | WordPress移行ガイド</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #f0f7ff; color: #333; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        
+        /* パンくずリスト */
+        .breadcrumb { font-size: 0.8rem; margin-bottom: 20px; color: #7f8c8d; }
+        .breadcrumb a { text-decoration: none; color: #3498db; }
+
+        /* 章のイントロ */
+        .chapter-intro-mini { background: #3498db; color: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; }
+        .chapter-intro-mini small { font-size: 0.75rem; opacity: 0.9; }
+        .chapter-intro-mini h2 { font-size: 1.1rem; margin: 5px 0; }
+        .chapter-intro-mini p { font-size: 0.85rem; opacity: 0.9; margin-top: 5px; }
+
+        /* 記事コンテンツ */
+        .post-content { background: white; padding: 25px 20px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .post-content h1 { font-size: 1.3rem; color: #2c3e50; margin-bottom: 20px; border-bottom: 3px solid #f0f7ff; padding-bottom: 10px; }
+        .post-content h3 { font-size: 1.05rem; color: #3498db; margin: 25px 0 10px; border-left: 4px solid #3498db; padding-left: 10px; }
+        .post-content p { margin-bottom: 15px; font-size: 0.95rem; }
+        .post-content .code-note { background: #f8f9fa; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 0.85rem; border: 1px inset #eee; margin: 10px 0; }
+        
+        /* アクションBOX */
+        .action-box { background: #e1f5fe; border: 1px solid #b3e5fc; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .action-box strong { color: #0288d1; display: block; margin-bottom: 5px; }
+
+        /* ナビボタン */
+        .post-nav-buttons { display: flex; gap: 10px; margin-bottom: 40px; }
+        .btn-nav { flex: 1; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        .btn-prev { background: #eee; color: #666; }
+        .btn-next { background: #3498db; color: white; }
+
+        /* 章内リスト */
+        .chapter-list-mini { margin-top: 30px; }
+        .chapter-list-mini h3 { font-size: 0.9rem; margin-bottom: 15px; color: #7f8c8d; }
+        .mini-card { display: flex; align-items: center; background: white; border: 1px solid #e1e8ed; padding: 12px 15px; border-radius: 8px; text-decoration: none; color: #333; margin-bottom: 10px; font-size: 0.85rem; }
+        .mini-card span { color: #3498db; font-weight: bold; margin-right: 10px; }
+        .mini-card.current { border: 2px solid #3498db; background: #f0faff; }
+
+        /* 下部メニューリンク */
+        .footer-menu-link { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .footer-menu-link a { color: #3498db; font-weight: bold; text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<main class="container">
+    <nav class="breadcrumb">
+        <a href="index.html">TOP</a> ＞ 
+        <a href="migration-guide.html">移行ガイド</a> ＞ 
+        <a href="migration-ch2.html">第2章</a>
+    </nav>
+
+    <section class="chapter-intro-mini">
+        <small>第2章：インフラ準備編</small>
+        <h2>ドメイン管理の継続：紐付け変更の技術</h2>
+        <p>「住所」は変えず、「建物」だけを新しく。SEO資産を守るためのDNS切り替え術。</p>
+    </section>
+
+    <article class="post-content">
+        <h1>6. ドメイン管理の継続：紐付け変更（お名前.com / Cloudflare）</h1>
+        <p>GitHub Pagesで運用していた独自ドメインは、あなたのブランドそのものです。WordPressへ移行する際、ドメインを新しく取得する必要はありません。現在のドメインの「向き先」を、GitHubのIPアドレスから、新しいレンタルサーバーのIPアドレスへ書き換えるだけで作業は完了します。</p>
+        
+        <h3>DNS（ネームサーバー）設定の変更</h3>
+        <p>ドメインの紐付けを変更するには、ドメイン管理会社（お名前.com、バリュードメイン等）またはDNS管理サービス（Cloudflare等）の管理画面に入ります。ここで行うのは<strong>「Aレコード」</strong>または<strong>「CNAMEレコード」</strong>の修正です。</p>
+
+        <div class="code-note">
+            例：Aレコードの変更<br>
+            [変更前] 185.199.108.153 (GitHub)<br>
+            [変更後] 123.456.78.90 (新サーバーのIP)
+        </div>
+
+        <h3>Cloudflareを利用している場合の注意点</h3>
+        <p>Cloudflareでドメインを管理している場合、切り替えは一瞬です。DNS設定画面で、これまでのGitHub向けのレコードを削除し、新しいレンタルサーバーから提供されたIPアドレスを登録してください。この際、オレンジ色の雲アイコン（プロキシ）をオンにしておくことで、高速化とセキュリティを維持できます。</p>
+
+        <h3>反映待ち（プロパゲーション）の時間</h3>
+        <p>設定を変更してから、世界中のインターネットに新しい住所が浸透するまでには、数時間から最大24時間程度の時間がかかります。この間、古いサイトが表示されたり、新しいサイトが表示されたりと不安定になりますが、慌てずに待つことが重要です。</p>
+
+        <div class="action-box">
+            <strong>💡 この記事のあとのステップ：</strong>
+            <p style="font-size: 0.85rem; margin-top: 5px;">現在ドメインをどこで管理しているか（お名前.com、Cloudflare等）を確認し、ログインパスワードを手元に準備しておきましょう。</p>
+        </div>
+    </article>
+
+    <nav class="post-nav-buttons">
+        <a href="migration-5.html" class="btn-nav btn-prev">← 前へ</a>
+        <a href="migration-7.html" class="btn-nav btn-next">次へ →</a>
+    </nav>
+
+    <section class="chapter-list-mini">
+        <h3>第2章：記事一覧</h3>
+        <div class="card-list">
+            <a href="migration-5.html" class="mini-card"><span>5</span> 失敗しないレンタルサーバー選定</a>
+            <a href="migration-6.html" class="mini-card current"><span>6</span> ドメイン管理の継続：紐付け変更</a>
+            <a href="migration-7.html" class="mini-card"><span>7</span> WordPressインストールと初期設定</a>
+            <a href="migration-8.html" class="mini-card"><span>8</span> 移行に適した「SEO特化型テーマ」</a>
+        </div>
+    </section>
+
+    <div class="footer-menu-link">
+        <a href="migration-guide.html">
+            ← WordPress移行ガイド目次へ戻る
+        </a>
+    </div>
+</main>
+
+<footer style="text-align: center; padding: 40px 0; color: #999; font-size: 0.8rem;">
+    <p>&copy; 2026 Zero-Cost SEO - 星 友和</p>
+</footer>
+
+</body>
+</html>
