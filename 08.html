@@ -24,36 +24,46 @@
 </header>
 
 <main class="container">
-    <a href="chapter1.html" class="back-link">← 第1章 目次へ戻る</a>
+    <nav>
+        <a href="chapter1.html" class="back-link">← 第1章 目次へ戻る</a>
+    </nav>
     
     <article class="post-content">
         <h1>8. 独自ドメインの取得とGitHub Pagesへの紐付け</h1>
-        <p>GitHub Pagesが提供するデフォルトのURL（ユーザー名.github.io）でもサイト運営は可能ですが、長期的な「資産」としてサイトを育てるなら、独自ドメインの取得は必須です。独自ドメインを持つことで、万が一プラットフォームを移転することになっても、それまでに積み上げたSEO評価（リンク資産）を失わずに済みます。また、読者からの信頼性も飛躍的に向上します。</p>
+        <p>GitHub Pagesはデフォルトで `ユーザー名.github.io` というURLを付与してくれますが、長期的な資産価値を考えるなら「独自ドメイン（例：example.com）」の取得は必須です。独自ドメインはサイトの「信頼性」を保証し、万が一プラットフォームを移転することになっても、積み上げたSEO評価をそのまま引き継ぐことができる唯一の手段だからです。</p>
 
-        
+        <div style="background-color: #fff9db; border: 2px dashed #f39c12; padding: 20px; margin: 30px 0; border-radius: 8px;">
+            <h3 style="margin-top: 0; color: #e67e22;">🚀 この記事のあとの作業工程</h3>
+            <ol style="line-height: 1.8; font-size: 0.95rem;">
+                <li><strong>サイトのテーマに合ったドメイン名を決める</strong></li>
+                <li><strong>ドメイン管理サービス（お名前.com等）で購入する</strong></li>
+                <li><strong>DNS設定を行い、GitHubのサーバーに紐付ける</strong></li>
+                <li><strong>第9回「SSL化（常時暗号化）」の確認へ進む</strong></li>
+            </ol>
+        </div>
 
-        <h2>ドメイン取得の考え方と選び方</h2>
-        <p>ドメインは「お名前.com」や「バリュードメイン」、「Cloudflare」などのレジストラ（登録業者）で購入できます。選ぶ際のポイントは、サイトのテーマを連想させ、かつ覚えやすい短い名前にすることです。末尾（TLD）は、日本向けであれば「.jp」、汎用性なら「.com」や「.net」が安定していますが、近年は安価な「.xyz」なども普及しています。ただし、更新費用が極端に高いものもあるため、初年度だけでなく継続コストもAIに調査させてから決定しましょう。</p>
+        <h2>独自ドメインがSEOに与える影響</h2>
+        <p>Googleの検索エンジンは、ドメインの「運用履歴」を評価します。無料ドメインの場合、その評価は提供元のドメインに帰属してしまいますが、独自ドメインであれば、あなたが記事を更新し続けるほど、ドメイン自体のパワー（ドメインパワー）が蓄積されていきます。数年後、あなたのサイトが強力な検索上位を独占するための「種まき」として、初期段階での独自ドメイン導入を強く推奨します。</p>
 
-        <h2>GitHub Pagesへの紐付け手順</h2>
-        <p>ドメインを入手したら、GitHub Pagesの設定画面（Settings > Pages）にある「Custom domain」欄に自分のドメインを入力します。しかし、これだけでは繋がりません。ドメインを購入した側の管理画面で「DNS設定」を行う必要があります。主に以下の2つの設定が一般的です。</p>
-        <ul>
-            <li><strong>CNAMEレコード:</strong> <code>www.あなたのドメイン</code> を <code>ユーザー名.github.io</code> に向ける設定。</li>
-            <li><strong>Aレコード:</strong> 独自ドメインそのもの（ネイキッドドメイン）を使用する場合、GitHubが指定する4つのIPアドレスを設定。</li>
-        </ul>
+        <h2>GitHubとの紐付け：DNSの壁を越える</h2>
+        <p>「エンジニアではないから設定が難しそう」と感じるかもしれませんが、やるべきことは「お使いのドメイン管理画面にGitHubのIPアドレスを入力する」だけです。この設定を行うことで、世界中の誰かがあなたのドメインを叩いたとき、GitHub上にあるあなたのサイトファイルへ自動的に誘導されるようになります。本ガイドでは、初心者でも迷わない設定フローを整理しています。</p>
 
-        
-
-        <p>設定が反映（浸透）するまでには数時間から最大24時間程度かかることがありますが、正しく紐付くと、あなた専用の「Web上の住所」で世界最速レベルの静的サイトが公開されます。次はこの住所の安全性を保証する「SSL化」について確認していきましょう。</p>
+        <div style="margin: 30px 0; padding: 20px; background: #f1f8ff; border: 1px solid #c8e1ff; border-radius: 8px; font-size: 0.95rem;">
+            <strong style="color: #0366d6;">💡 ドメイン設定ガイド：</strong><br>
+            <p style="margin-top: 10px;">ドメインの買い方や、GitHub側でのカスタムドメイン設定、DNSの書き換え手順を画像付きで確認したい方は、こちらをご覧ください。</p>
+            <a href="domain-setup-guide.html" style="display: inline-block; margin-top: 5px; font-weight: bold; color: #0366d6; text-decoration: underline;">
+                👉 独自ドメイン取得とDNS設定の完全マニュアルを読む
+            </a>
+        </div>
     </article>
 
-    <nav class="post-nav" style="display: flex; justify-content: space-between; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee;">
-        <a href="07.html" style="text-decoration: none; color: #f39c12; font-weight: bold;">← 前のページへ</a>
-        <a href="09.html" style="text-decoration: none; color: #f39c12; font-weight: bold;">次のページへ →</a>
+    <nav class="post-nav" style="display: flex; justify-content: space-between; align-items: center; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee;">
+        <a href="07.html" style="text-decoration: none; color: #f39c12; font-weight: bold; flex: 1; text-align: left;">← [7. SEOに強いコードの書き方] へ戻る</a>
+        <a href="09.html" style="text-decoration: none; color: #f39c12; font-weight: bold; flex: 1; text-align: right;">[9. SSL化とセキュリティ] へ進む →</a>
     </nav>
 
     <section class="article-footer-nav">
-        <h3>同じカテゴリー（第1章：ゼロコスト・爆速インフラ構築編）の記事</h3>
+        <h3>同じカテゴリーの記事</h3>
         <ul class="vertical-article-list">
             <li><a href="01.html">1. GitHub Pages×AIで作る「維持費0円」の資産サイト</a></li>
             <li><a href="02.html">2. AI軍師と共に戦略を練る：プロンプトエンジニアリング</a></li>
@@ -71,12 +81,6 @@
             <li><a href="14.html">14. Google Analytics 4 (GA4) によるデータ計測の開始</a></li>
             <li><a href="15.html">15. 第1章まとめ：インフラ構築が資産サイトの命運を握る</a></li>
         </ul>
-
-        <div style="margin-top: 40px; text-align: center;">
-            <a href="index.html" style="color: #666; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid #ddd;">
-                他のカテゴリーの記事を読む（トップページへ戻る）
-            </a>
-        </div>
     </section>
 </main>
 
