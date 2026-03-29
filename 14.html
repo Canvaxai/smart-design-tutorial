@@ -24,37 +24,46 @@
 </header>
 
 <main class="container">
-    <a href="chapter1.html" class="back-link">← 第1章 目次へ戻る</a>
+    <nav>
+        <a href="chapter1.html" class="back-link">← 第1章 目次へ戻る</a>
+    </nav>
     
     <article class="post-content">
         <h1>14. Google Analytics 4 (GA4) によるデータ計測の開始</h1>
-        <p>Google Search Consoleが「Googleから見たあなたのサイト」を教えてくれるのに対し、Google Analytics 4（GA4）は「ユーザーがあなたのサイトでどう動いたか」を可視化してくれます。どの記事が一番読まれているのか、どこで離脱しているのか、そして最終的に収益に結びつくアクションを起こしているのか。これらのデータを計測することは、資産サイトを「ただのブログ」から「収益を生む装置」へと進化させるために不可欠です。</p>
+        <p>サーチコンソールが「検索結果での動き」を見るツールなら、Google Analytics 4（GA4）は「サイトに訪れた後の動き」を分析するツールです。読者がどのページから流入し、どれくらいの時間滞在し、どのボタンをクリックしたのか。これらの行動データを把握することで、あなたのサイトは単なる情報の集積地から、収益を生み出す「洗練された資産」へと進化します。</p>
 
-        
+        <div style="background-color: #fff9db; border: 2px dashed #f39c12; padding: 20px; margin: 30px 0; border-radius: 8px;">
+            <h3 style="margin-top: 0; color: #e67e22;">🚀 この記事のあとの作業工程</h3>
+            <ol style="line-height: 1.8; font-size: 0.95rem;">
+                <li><strong>GA4プロパティを作成し「測定ID」を取得する</strong></li>
+                <li><strong>HTMLのhead内にトラッキングコードを埋め込む</strong></li>
+                <li><strong>リアルタイムレポートで計測が正常に行われているか確認する</strong></li>
+                <li><strong>第15回「第1章まとめ」へ進む</strong></li>
+            </ol>
+        </div>
 
-        <h2>GA4導入のステップと計測コードの配置</h2>
-        <p>GA4の導入は非常にシンプルです。Googleアナリティクスのアカウントを作成し、「データストリーム」からウェブサイトを登録すると、<code>G-</code>から始まる「測定ID」が発行されます。GitHub Pagesのような静的サイトの場合、発行された「グローバルサイトタグ」をすべてのHTMLファイルの<code>&lt;head&gt;</code>内に貼り付けるだけで計測が始まります。一度設定してしまえば、データベースを持たない静的サイトであっても、動的サイトと全く遜色のない高度な分析が可能になります。</p>
+        <h2>ユーザーの「体験」を数値化する</h2>
+        <p>GA4は、従来のアクセス解析よりも「ユーザーの行動（イベント）」を重視した設計になっています。読者が記事を最後までスクロールしたか、アフィリエイトリンクをクリックしたかといった動きを詳細に追跡できます。このデータをAI軍師に渡して分析させることで、「離脱率が高い原因は何か？」「成約率を上げるための改善案は？」といった高度な戦略を、根拠のある数字に基づいて導き出せるようになります。</p>
 
-        <h2>見るべきは「エンゲージメント」と「収益」</h2>
-        <p>GA4には膨大なデータが表示されますが、初心者がまず注目すべきは以下の指標です。</p>
-        <ul>
-            <li><strong>エンゲージメント時間:</strong> ユーザーが実際に記事を読んでいる時間の長さ。AIで生成した記事が本当に価値を提供できているかの指標になります。</li>
-            <li><strong>イベント（クリック）:</strong> アフィリエイトリンクや内部リンクがどれだけクリックされたかを計測します。</li>
-            <li><strong>参照元/メディア:</strong> ユーザーが検索から来たのか、SNSから来たのかを特定し、集客戦略の判断材料にします。</li>
-        </ul>
+        <h2>プライバシーへの配慮と正確な運用</h2>
+        <p>計測を開始するにあたって、Cookieの扱いなどのプライバシー設定も重要です。GitHub Pagesで運用する場合、サーバーサイドの複雑な処理は不要ですが、正しいスクリプトの配置が必要です。GA4とSearch Consoleを連携させることで、検索データと行動データを一元管理し、サイトの全体像を把握できる最強のダッシュボードを完成させましょう。</p>
 
-        
-
-        <p>データが蓄積されてきたら、AIにその数値を読み込ませてみましょう。「直帰率が高い記事を、滞在時間を伸ばすためにどうリライトすべきか？」とAI軍師に相談することで、データに基づいた的確な改善案が得られます。これで、サイトの「観測」のための準備はすべて整いました。次は、第1章の締めくくりとして、ここまでのインフラ構築が資産サイトにどのような価値をもたらすのかを総括します。</p>
+        <div style="margin: 30px 0; padding: 20px; background: #f1f8ff; border: 1px solid #c8e1ff; border-radius: 8px; font-size: 0.95rem;">
+            <strong style="color: #0366d6;">💡 解析ガイド：</strong><br>
+            <p style="margin-top: 10px;">「コードの貼り付け場所がわからない」「自分のアクセスを除外したい」という方は、GA4の導入と基本的な使い方のガイドをご覧ください。</p>
+            <a href="ga4-setup-guide.html" style="display: inline-block; margin-top: 5px; font-weight: bold; color: #0366d6; text-decoration: underline;">
+                👉 GA4の初期設定と計測確認ガイドを読む
+            </a>
+        </div>
     </article>
 
-    <nav class="post-nav" style="display: flex; justify-content: space-between; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee;">
-        <a href="13.html" style="text-decoration: none; color: #f39c12; font-weight: bold;">← 前のページへ</a>
-        <a href="15.html" style="text-decoration: none; color: #f39c12; font-weight: bold;">次のページへ →</a>
+    <nav class="post-nav" style="display: flex; justify-content: space-between; align-items: center; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee;">
+        <a href="13.html" style="text-decoration: none; color: #f39c12; font-weight: bold; flex: 1; text-align: left;">← [13. Google Search Consoleへの登録] へ戻る</a>
+        <a href="15.html" style="text-decoration: none; color: #f39c12; font-weight: bold; flex: 1; text-align: right;">[15. 第1章まとめ] へ進む →</a>
     </nav>
 
     <section class="article-footer-nav">
-        <h3>同じカテゴリー（第1章：ゼロコスト・爆速インフラ構築編）の記事</h3>
+        <h3>同じカテゴリーの記事</h3>
         <ul class="vertical-article-list">
             <li><a href="01.html">1. GitHub Pages×AIで作る「維持費0円」の資産サイト</a></li>
             <li><a href="02.html">2. AI軍師と共に戦略を練る：プロンプトエンジニアリング</a></li>
@@ -63,7 +72,7 @@
             <li><a href="05.html">5. GitHubアカウントの作成とリポジトリの設定</a></li>
             <li><a href="06.html">6. ローカル環境の構築：VS CodeとGitの連携</a></li>
             <li><a href="07.html">7. HTML5/CSS3の基本構造：SEOに強いコードの書き方</a></li>
-            <li><a href="08.html">8. 独自ドメインの取得とGitHub Pagesへの紐付け</a></li>
+            <li><a href="08.html">8. 独自ドメインの取得と GitHub Pagesへの紐付け</a></li>
             <li><a href="09.html">9. SSL化の確認とセキュリティ設定の基本</a></li>
             <li><a href="10.html">10. AIを活用したサイトマップとディレクトリ設計</a></li>
             <li><a href="11.html">11. 内部リンク構造の最適化：クローラビリティを高める</a></li>
@@ -72,12 +81,6 @@
             <li><a href="14.html">14. Google Analytics 4 (GA4) によるデータ計測の開始</a></li>
             <li><a href="15.html">15. 第1章まとめ：インフラ構築が資産サイトの命運を握る</a></li>
         </ul>
-
-        <div style="margin-top: 40px; text-align: center;">
-            <a href="index.html" style="color: #666; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid #ddd;">
-                他のカテゴリーの記事を読む（トップページへ戻る）
-            </a>
-        </div>
     </section>
 </main>
 
