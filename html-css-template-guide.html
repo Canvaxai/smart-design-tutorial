@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H56XHD5MLW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H56XHD5MLW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIのためのSEO最適化HTMLテンプレート | Zero-Cost SEO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <h1>Zero-Cost SEO</h1>
+        <p>技術とAIで、コストゼロの資産サイトを構築する</p>
+    </div>
+</header>
+
+<main class="container">
+    <nav>
+        <a href="#" onclick="history.back(); return false;" class="back-link">← 第7回 本編へ戻る</a>
+    </nav>
+    
+    <article class="post-content">
+        <h1>AIのためのSEO最適化HTMLテンプレート</h1>
+        <p>AIに記事を書かせる際、「SEOに強いHTML5の構造で出力して」と指示するだけでは不十分です。具体的にどのタグをどう使うべきか、AIに示すための「黄金のテンプレート」を用意しました。これをAIへのプロンプト（指示文）に貼り付けて使用してください。</p>
+
+        <h2 style="border-left: 5px solid #3498db; padding-left: 15px;">1. SEO最強の基本構造（テンプレート）</h2>
+        <p>以下のコードは、Googleのクローラーが「どこに何が書いてあるか」を最も理解しやすいセマンティックな構造です。</p>
+
+        <div style="background: #2d3436; color: #dfe6e9; padding: 20px; border-radius: 8px; margin: 20px 0; font-family: monospace; font-size: 0.85rem; overflow-x: auto;">
+            <pre><code>&lt;!-- AIへの指示：以下の構造で出力してください --&gt;
+&lt;header&gt;
+  &lt;!-- サイトタイトルやロゴ --&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;!-- パンくずリストや主要ナビゲーション --&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h1&gt;記事のメインタイトル&lt;/h1&gt;
+    &lt;section&gt;
+      &lt;h2&gt;導入文や最初の見出し&lt;/h2&gt;
+      &lt;p&gt;本文...&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h2&gt;中見出し&lt;/h2&gt;
+      &lt;h3&gt;小見出し&lt;/h3&gt;
+      &lt;p&gt;本文...&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/article&gt;
+
+  &lt;aside&gt;
+    &lt;!-- 関連記事やプロフィールなどの補足情報 --&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;!-- コピーライトやサイトマップリンク --&gt;
+&lt;/footer&gt;</code></pre>
+        </div>
+
+        
+
+        <h2 style="border-left: 5px solid #2ecc71; padding-left: 15px; margin-top: 40px;">2. 各タグの「SEO的な役割」</h2>
+        <p>AIが出力したコードをチェックする際は、以下の役割が守られているか確認しましょう。</p>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem;">
+            <tr style="background: #f8f9fa;">
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">タグ</th>
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">役割（SEO上の意味）</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px;"><code>&lt;main&gt;</code></td>
+                <td style="border: 1px solid #ddd; padding: 10px;">ページの中心トピック。1ページに1つだけ使用。</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px;"><code>&lt;article&gt;</code></td>
+                <td style="border: 1px solid #ddd; padding: 10px;">独立したコンテンツ。記事そのものを包む。</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px;"><code>&lt;section&gt;</code></td>
+                <td style="border: 1px solid #ddd; padding: 10px;">章立て。必ず中に見出し（h2-h6）を含む。</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px;"><code>&lt;aside&gt;</code></td>
+                <td style="border: 1px solid #ddd; padding: 10px;">本文とは直接関係ない補足情報（サイドバー等）。</td>
+            </tr>
+        </table>
+
+        <h2 style="border-left: 5px solid #f39c12; padding-left: 15px; margin-top: 40px;">3. AI軍師への伝え方（プロンプト例）</h2>
+        <p>AIに記事作成を依頼する際、プロンプトの最後に以下の一文を付け加えてください。</p>
+        <div style="background: #fff9db; padding: 15px; border-radius: 5px; border-left: 5px solid #f39c12; font-style: italic;">
+            「出力はHTML形式とし、main, article, sectionタグを用いたセマンティックな構造にしてください。また、見出しタグ（h1〜h3）を適切に使い、画像が必要な箇所にはalt属性を空にしたimgタグを配置してください。」
+        </div>
+
+        <div style="background-color: #f1f8ff; border: 2px dashed #3498db; padding: 20px; margin-top: 40px; border-radius: 8px;">
+            <h3 style="margin-top: 0; color: #0366d6;">✅ 本編に戻って次のステップへ</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">HTMLの「型」が決まったら、次はこのサイトを世界に公開するための「独自ドメイン」の準備に入ります。下のボタンから第7回へ戻り、次へ進みましょう。</p>
+        </div>
+    </article>
+
+    <div style="text-align: center; margin: 50px 0;">
+        <a href="#" onclick="history.back(); return false;" style="background: #3498db; color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);">
+            ← 構造を理解したので本編に戻る
+        </a>
+    </div>
+</main>
+
+<footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2026 Zero-Cost SEO - 星 友和</p>
+    </div>
+</footer>
+
+</body>
+</html>
