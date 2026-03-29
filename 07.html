@@ -24,35 +24,46 @@
 </header>
 
 <main class="container">
-    <a href="chapter1.html" class="back-link">← 第1章 目次へ戻る</a>
+    <nav>
+        <a href="chapter1.html" class="back-link">← 第1章 目次へ戻る</a>
+    </nav>
     
     <article class="post-content">
         <h1>7. HTML5/CSS3の基本構造：SEOに強いコードの書き方</h1>
-        <p>SEOにおいて、HTMLは単なる「見た目を作るための指示書」ではなく、検索エンジンのクローラーに「どこに何が書かれているか」を伝えるための「地図」です。最新のHTML5標準に沿った正しいタグ使い（セマンティックHTML）をマスターすることで、AIが生成した高品質なコンテンツの価値を、検索エンジンに100%伝えることができるようになります。</p>
+        <p>SEOにおける「コードの書き方」とは、単に画面を綺麗に見せることではありません。検索エンジンのクローラー（ロボット）に対し、どこがタイトルで、どこが重要な本文なのかを正確に伝える「翻訳作業」です。HTML5のセマンティック（意味論的）な記述をマスターすることで、AIが生成した良質なコンテンツを正当に評価させることが可能になります。</p>
 
-        
+        <div style="background-color: #fff9db; border: 2px dashed #f39c12; padding: 20px; margin: 30px 0; border-radius: 8px;">
+            <h3 style="margin-top: 0; color: #e67e22;">🚀 この記事のあとの作業工程</h3>
+            <ol style="line-height: 1.8; font-size: 0.95rem;">
+                <li><strong>セマンティック構造（header, main, article等）を理解する</strong></li>
+                <li><strong>h1〜h6の見出しタグを正しく配置する</strong></li>
+                <li><strong>AIを使って「SEOに最適化されたHTML」を生成させる</strong></li>
+                <li><strong>第8回「独自ドメインの設定」へ進む</strong></li>
+            </ol>
+        </div>
 
-        <h2>検索エンジンに意味を伝える「セマンティックHTML」</h2>
-        <p>かつてのWeb制作では、全ての要素を <code>&lt;div&gt;</code> タグで囲む手法が一般的でしたが、現在はそれぞれの場所に意味を持たせることが求められます。Zero-Cost SEOで採用すべき主要なタグは以下の通りです。</p>
-        <ul>
-            <li><strong>&lt;header&gt;:</strong> サイトのロゴやナビゲーションなど、導入部分を示します。</li>
-            <li><strong>&lt;main&gt;:</strong> そのページの「主役」となるコンテンツを囲みます。1ページに1つだけ使用します。</li>
-            <li><strong>&lt;article&gt;:</strong> ニュース記事やブログ投稿など、それ自体で独立した内容を示します。</li>
-            <li><strong>&lt;section&gt;:</strong> 章や節など、意味のある情報のまとまりを示します。</li>
-            <li><strong>&lt;h1&gt;〜&lt;h6&gt;:</strong> 見出しの階層を正しく守ります。特にh1はページの主題として1つに絞ります。</li>
-        </ul>
+        <h2>クローラーを迷わせない「セマンティックHTML」</h2>
+        <p>昔のWebサイトは「divタグ」ばかりで構成されていましたが、現代のSEOでは「これは記事（article）です」「これは補足情報（aside）です」とはっきりと宣言する必要があります。これにより、Googleはページ内のノイズを排除し、あなたが最も伝えたいメインコンテンツを優先的にインデックスできるようになります。また、適切なタグの使用はアクセシビリティ（読み上げ機能など）の向上にも繋がり、間接的にSEO評価を高めます。</p>
 
-        <h2>CSS3による「軽量で高速なデザイン」</h2>
-        <p>静的サイトの強みである表示速度を最大化するためには、CSS（スタイルシート）の書き方も重要です。過度な装飾や、重い画像ファイルを背景に多用することは避けます。代わりに、CSS3の機能を活用して、コードだけでボタンのグラデーションや角丸を表現することで、読み込み時間を劇的に短縮できます。また、外部ファイルを読み込む回数を減らすため、CSSは1つのファイル（style.css）にまとめ、無駄な記述を削ぎ落とした「軽量な設計」を心がけましょう。これが、クローラーとユーザーの両方に好まれるサイトへの近道です。</p>
+        <h2>AI時代こそ「コードの正解」を知る</h2>
+        <p>AI（Geminiなど）に「SEOに強いHTMLを書いて」と頼む際、あなた自身が正しい構造を知っていれば、AIが出したコードの良し悪しを即座に判断できます。例えば、一つのページにh1タグが複数ないか、画像のalt属性（代替テキスト）が抜けていないか、といったチェックです。人間が「監修者」となり、AIが「執筆者」となる。この体制を整えることが、爆速で資産サイトを量産するための鍵となります。</p>
+
+        <div style="margin: 30px 0; padding: 20px; background: #f1f8ff; border: 1px solid #c8e1ff; border-radius: 8px; font-size: 0.95rem;">
+            <strong style="color: #0366d6;">💡 コーディングガイド：</strong><br>
+            <p style="margin-top: 10px;">「どのタグをどこに使えばいいか分からない」という方は、AIに指示を出すためのHTML基本テンプレートと解説ガイドをご覧ください。</p>
+            <a href="html-css-template-guide.html" style="display: inline-block; margin-top: 5px; font-weight: bold; color: #0366d6; text-decoration: underline;">
+                👉 AIのためのSEO最適化HTMLテンプレートを読む
+            </a>
+        </div>
     </article>
 
-    <nav class="post-nav" style="display: flex; justify-content: space-between; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee;">
-        <a href="06.html" style="text-decoration: none; color: #f39c12; font-weight: bold;">← 前のページへ</a>
-        <a href="08.html" style="text-decoration: none; color: #f39c12; font-weight: bold;">次のページへ →</a>
+    <nav class="post-nav" style="display: flex; justify-content: space-between; align-items: center; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee;">
+        <a href="06.html" style="text-decoration: none; color: #f39c12; font-weight: bold; flex: 1; text-align: left;">← [6. ローカル環境の構築] へ戻る</a>
+        <a href="08.html" style="text-decoration: none; color: #f39c12; font-weight: bold; flex: 1; text-align: right;">[8. 独自ドメインの取得と設定] へ進む →</a>
     </nav>
 
     <section class="article-footer-nav">
-        <h3>同じカテゴリー（第1章：ゼロコスト・爆速インフラ構築編）の記事</h3>
+        <h3>同じカテゴリーの記事</h3>
         <ul class="vertical-article-list">
             <li><a href="01.html">1. GitHub Pages×AIで作る「維持費0円」の資産サイト</a></li>
             <li><a href="02.html">2. AI軍師と共に戦略を練る：プロンプトエンジニアリング</a></li>
@@ -70,18 +81,12 @@
             <li><a href="14.html">14. Google Analytics 4 (GA4) によるデータ計測の開始</a></li>
             <li><a href="15.html">15. 第1章まとめ：インフラ構築が資産サイトの命運を握る</a></li>
         </ul>
-
-        <div style="margin-top: 40px; text-align: center;">
-            <a href="index.html" style="color: #666; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid #ddd;">
-                他のカテゴリーの記事を読む（トップページへ戻る）
-            </a>
-        </div>
     </section>
 </main>
 
 <footer class="main-footer">
     <div class="container">
-        <p>&copy; 2026 Zero-Cost SEO</p>
+        <p>&copy; 2026 Zero-Cost SEO - 星 友和</p>
     </div>
 </footer>
 
