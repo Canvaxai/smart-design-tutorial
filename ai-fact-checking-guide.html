@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H56XHD5MLW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H56XHD5MLW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI情報の真偽を見極める検証フロー | Zero-Cost SEO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <h1>Zero-Cost SEO</h1>
+        <p>技術とAIで、コストゼロの資産サイトを構築する</p>
+    </div>
+</header>
+
+<main class="container">
+    <nav>
+        <a href="#" onclick="history.back(); return false;" class="back-link">← 第19回 本編へ戻る</a>
+    </nav>
+    
+    <article class="post-content">
+        <h1>AI情報の真偽を見極める検証フロー</h1>
+        <p>AIが出した情報をそのまま公開するのは、爆弾を抱えて走るようなものです。安全に、かつ迅速にファクトチェックを行うための3つのステップを紹介します。</p>
+
+        <h2 style="border-left: 5px solid #e74c3c; padding-left: 15px;">STEP 1：AIへの「根拠」問い詰めプロンプト</h2>
+        <p>AIに回答させた後、必ず以下のプロンプトを重ねてください。これでAI自身のハルシネーションをある程度防げます。</p>
+        <div style="background: #2d3436; color: #dfe6e9; padding: 20px; border-radius: 8px; margin: 20px 0; font-family: monospace; font-size: 0.9rem;">
+            今の回答の中で、数値、日付、固有名詞、法律に関わる部分は、どこから引用したものですか？また、もしあなたが確信を持っていない部分があれば正直に白状してください。
+        </div>
+
+        <h2 style="border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">STEP 2：公式ソースへのダイレクトアクセス</h2>
+        <p>AIが「〜と言われています」と言ったら、以下の優先順位でソースを確認します。</p>
+        <ul>
+            <li><strong>公的機関（.go.jp / .gov）</strong>：法律、医療、公的データ。</li>
+            <li><strong>企業公式サイト（IR情報など）</strong>：商品スペック、最新ニュース。</li>
+            <li><strong>Google Scholar</strong>：科学的根拠、論文データ。</li>
+        </ul>
+
+        <h2 style="border-left: 5px solid #2ecc71; padding-left: 15px; margin-top: 40px;">STEP 3：「逆の意見」をAIに探させる</h2>
+        <p>情報の偏りを防ぐため、以下のプロンプトを使います。</p>
+        <div style="background: #2d3436; color: #dfe6e9; padding: 20px; border-radius: 8px; margin: 20px 0; font-family: monospace; font-size: 0.9rem;">
+            この主張（AIの回答）に対して、反対の立場をとる専門家やデータはありますか？反論の余地がある場合は、それも併記してください。
+        </div>
+
+        <div style="background-color: #fff9db; border: 2px dashed #f39c12; padding: 20px; margin-top: 40px; border-radius: 8px;">
+            <h3 style="margin-top: 0; color: #e67e22;">✅ 信頼性の確保ができたら</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">正しさが証明された情報に「温度（感情）」を吹き込み、読者の心を動かす文章に仕上げていきます。第20回へ進みましょう。</p>
+        </div>
+    </article>
+
+    <div style="text-align: center; margin: 50px 0;">
+        <a href="#" onclick="history.back(); return false;" style="background: #e74c3c; color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">
+            ← 検証フローを理解したので本編に戻る
+        </a>
+    </div>
+</main>
+
+<footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2026 Zero-Cost SEO - 星 友和</p>
+    </div>
+</footer>
+
+</body>
+</html>
