@@ -17,7 +17,7 @@ body {
 }
 
 /* =========================================
-   ヘッダー全体のレイアウト
+   ヘッダー（タイトル色の修正）
    ========================================= */
 .main-header {
     background-color: #2c3e50;
@@ -31,14 +31,18 @@ body {
     text-align: center;
 }
 
+/* タイトルリンクを常に白に固定 */
 .header-top h1 {
     margin: 0;
     font-size: 2rem;
 }
 
-.header-top h1 a {
-    color: white;
-    text-decoration: none;
+.header-top h1 a,
+.header-top h1 a:visited,
+.header-top h1 a:hover,
+.header-top h1 a:active {
+    color: white !important;
+    text-decoration: none !important;
 }
 
 .header-top p {
@@ -48,7 +52,7 @@ body {
 }
 
 /* =========================================
-   ナビゲーションバー（ヘッダーメニュー）
+   ナビゲーションバー
    ========================================= */
 .global-nav {
     background-color: #34495e;
@@ -74,46 +78,48 @@ body {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: bold;
-    transition: background 0.3s;
-    cursor: pointer; /* 指マークにする */
+    cursor: pointer;
+    user-select: none;
 }
 
 .nav-list > li > a:hover {
     background-color: #f39c12;
 }
 
-/* ドロップダウンメニューの制御 */
-.dropdown-content {
-    display: none; /* 初期状態は非表示 */
+/* ドロップダウンメニュー本体 */
+#dropdown-menu {
+    display: none; /* 初期は非表示 */
     position: absolute;
     top: 100%;
     left: 0;
     background-color: white;
     min-width: 320px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
+    z-index: 9999; /* 最前面に表示 */
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-/* クリック時にこのクラスが付与されて表示される */
-.dropdown-content.open {
-    display: block;
+/* 表示用のクラス */
+#dropdown-menu.open {
+    display: block !important;
 }
 
-.dropdown-content li a {
-    color: #333;
+#dropdown-menu li a {
+    color: #333 !important;
     padding: 15px 20px;
     text-decoration: none;
     display: block;
     font-size: 0.9rem;
     border-bottom: 1px solid #eee;
     line-height: 1.4;
+    text-align: left;
 }
 
-.dropdown-content li a:hover {
+#dropdown-menu li a:hover {
     background-color: #f8f9fa;
-    color: #f39c12;
+    color: #f39c12 !important;
 }
 
 /* =========================================
@@ -145,7 +151,6 @@ body {
     background-color: #f39c12;
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .tile-keyword {
@@ -162,7 +167,7 @@ body {
 }
 
 /* =========================================
-   記事コンテンツの装飾
+   コンテンツ装飾
    ========================================= */
 .post-content {
     background: white;
@@ -206,7 +211,7 @@ body {
 }
 
 /* =========================================
-   レスポンシブ（スマホ対応）
+   レスポンシブ
    ========================================= */
 @media (max-width: 768px) {
     .nav-list {
@@ -215,14 +220,14 @@ body {
     .nav-list > li {
         border-bottom: 1px solid #455a64;
     }
-    .dropdown-content {
+    #dropdown-menu {
         position: static;
         box-shadow: none;
         background-color: #3e5871;
         width: 100%;
     }
-    .dropdown-content li a {
-        color: #eee;
+    #dropdown-menu li a {
+        color: #eee !important;
         padding-left: 30px;
     }
 }
