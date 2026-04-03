@@ -13,39 +13,139 @@
     <title>77. 画像生成の自動ワークフロー：アイキャッチ量産術 | Zero-Cost SEO</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 全画面メニューのスタイル */
+        #full-screen-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.98); 
+            color: white;
+            z-index: 2000;
+            display: none; 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #full-screen-menu.open {
+            display: flex;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: #f39c12; line-height: 1;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            width: 80%;
+        }
+        .menu-list li {
+            margin: 20px 0;
+            border-bottom: 1px solid #3e5871;
+            padding-bottom: 10px;
+        }
+        .menu-list a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: block;
+        }
+        .menu-category {
+            font-size: 0.8rem;
+            color: #f39c12;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* 離脱防止用ヘッダーボタン */
+        .search-trigger {
+            display: flex; align-items: center; justify-content: center; background: #e67e22; color: white; padding: 12px 20px; border-radius: 30px; cursor: pointer; font-size: 1rem; border: none; margin: 15px auto; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.2s;
+        }
+        .search-trigger:active { transform: scale(0.95); }
+
+        /* 移行ガイドバナー */
+        .migration-banner {
+            display: block; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-align: center; padding: 20px; border-radius: 10px; text-decoration: none; margin: 30px 0; font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+
+<div id="full-screen-menu">
+    <div class="menu-close" onclick="toggleMenu()">×</div>
+    <ul class="menu-list">
+        <li><span class="menu-category">迷った時はこちら</span><a href="index.html">🏠 トップページに戻る</a></li>
+        <li><span class="menu-category">基本から始める</span><a href="chapter1.html">第1章：インフラ構築編</a></li>
+        <li><span class="menu-category">AIで記事を書く</span><a href="chapter2.html">第2章：コンテンツ編</a></li>
+        <li><span class="menu-category">収益を最大化する</span><a href="chapter3.html">第3章：マネタイズ編</a></li>
+        <li><span class="menu-category">信頼を構築する</span><a href="chapter4.html">第4章：E-E-A-T編</a></li>
+        <li><span class="menu-category">運営を自動化する</span><a href="chapter5.html">第5章：オートメーション編</a></li>
+        <li><span class="menu-category">ブランドを創る</span><a href="chapter6.html">第6章：未来戦略編</a></li>
+    </ul>
+</div>
 
 <header class="main-header">
     <div class="container">
         <h1>Zero-Cost SEO</h1>
         <p>技術とAIで、コストゼロの資産サイトを構築する</p>
+        <button class="search-trigger" onclick="toggleMenu()">
+            🔍 お探しのページはこちら
+        </button>
     </div>
-</header>
+</header> 
 
 <main class="container">
-    <a href="chapter5.html" class="back-link">← 第5章 目次へ戻る</a>
+    <nav>
+        <a href="chapter5.html" class="back-link">← 第5章 目次へ戻る</a>
+    </nav>
     
     <article class="post-content">
         <h1>77. 画像生成の自動ワークフロー：アイキャッチ量産術</h1>
-        <p>ブログ記事におけるアイキャッチ画像や本文内の図解は、読者の滞在時間を延ばし、SNSでのクリック率を劇的に向上させる視覚的要素です。しかし、高品質な画像を毎回作成したり探したりするのは、サイトの量産体制において大きなボトルネックとなります。画像生成AIをシステムのワークフローに組み込み、記事の文脈に完全に一致した独自の画像を自動で量産するエンジニアリング手法を解説します。</p>
+        <p>記事のタイトルや内容が決まっても、それに類する「アイキャッチ画像」を用意する作業は、意外と時間がかかるものです。フリー素材を探す手間、あるいは画像生成AIを手動で動かす手間。これらをエンジニアリングで解消します。Pythonと画像生成APIを組み合わせ、記事内容からプロンプトを自動生成し、完全に独自のアイキャッチ画像を爆速で量産するワークフローを構築しましょう。</p>
 
-        <h2>記事内容に連動したプロンプトの自動生成</h2>
-        <p>画像の自動生成において最も重要なのは、AIに対する指示書（プロンプト）の精度です。LLM（大規模言語モデル）を活用し、執筆した記事の要旨やキーワードから、その内容を最もよく表す画像生成用プロンプトを自動で抽出させます。単なる風景ではなく、記事のテーマやトーンを反映させたプロンプトをPython経由で生成することで、一貫性のあるビジュアル制作が可能になります。これにより、記事ごとに最適化された独自の画像が、人間を介さずに出力されます。</p>
+        <div style="background-color: #fff9db; border: 2px dashed #f39c12; padding: 20px; margin: 30px 0; border-radius: 8px;">
+            <h3 style="margin-top: 0; color: #e67e22;">🚀 この記事のあとの作業工程</h3>
+            <ol style="line-height: 1.8; font-size: 0.95rem;">
+                <li><strong>OpenAI API（DALL-E 3）などの画像生成APIキーを取得する</strong><br>
+                    → <a href="https://openai.com/blog/dall-e-3-deep-integration-with-chatgpt" target="_blank" rel="noopener">OpenAI DALL-E 3（外部リンク）</a></li>
+                <li><strong>AIに対し「自サイトのトーン＆マナーに合致する、画像生成用の共通プロンプト」を作成させる</strong></li>
+                <li><strong>第78回「外注化のAI化：AIをディレクターとして活用する」へ進む</strong></li>
+            </ol>
+        </div>
 
-        <h2>画像生成AI（DALL-E/Midjourney）のAPI連携</h2>
-        <p>生成されたプロンプトを、DALL-E 3やMidjourney、Stable Diffusionなどの画像生成AIのAPIに送信し、自動で画像を生成させます。生成された画像はスクリプトで自動的にダウンロードされ、適切なファイル名に変更、さらに軽量化（WebP形式への変換など）を施した上で、GitHubのリポジトリの適切なディレクトリへ保存されます。このパイプラインを構築することで、文章だけでなく視覚情報も含めた完全な「記事パッケージ」が無人で完成します。</p>
+        <h2>「記事内容」から「画像プロンプト」を自動生成</h2>
+        <p>手動でプロンプト（指示文）を考える必要はありません。記事を執筆したAI（第2章）に対し、「このサイトの雰囲気（例：サイバーパンク風、ミニマル風）に合わせて、この記事のアイキャッチ画像用プロンプトを作成せよ」と指示します。これをPythonスクリプトで自動化することで、記事が生成された瞬間に、その記事専用の画像プロンプトも同時に完成します。</p>
 
-        <h2>ブランドイメージを統一する画風の固定技術</h2>
-        <p>複数のサイトや記事で画風がバラバラになると、サイト全体のブランディングを損ないます。プロンプトの中に「特定のアーティスト風」「ミニマルなデザイン」「特定のカラーパレット」などの指定を定型化し、AIに学習させることで、サイト全体で統一感のある画像を生成し続けることができます。これにより、読者は一目で「あのサイトの記事だ」と認識できるようになり、サイトのアイデンティティが強化されます。技術による視覚支配が、資産価値をさらに高めます。</p>
+        [attachment_0](attachment)
 
-        <h2>まとめ</h2>
-        <p>文章も画像もAIで自動化されたら、次は「管理」の領域です。AIを単なるライターではなく、外注先を管理するディレクターとして活用し、運用のさらなる効率化を目指す「外注化のAI化」手法へと進みましょう。</p>
+        <h2>API連携による完全自動生成と配置</h2>
+        <p>完成したプロンプトを、Python経由で画像生成API（DALL-E 3やMidjourneyのAPI等）へ送信します。生成された画像データを自動でダウンロードし、適切なファイル名（SEOを意識した名前）でサイトの画像フォルダ（`images/`）へ保存。さらに、HTMLファイル内の`<img>`タグやOGPタグ（第15回）へ、生成した画像パスを自動で書き込む。ここまでを一つのパイプライン（管）として統合します。</p>
+
+        <div style="margin: 30px 0; padding: 20px; background: #f1f8ff; border: 1px solid #c8e1ff; border-radius: 8px; font-size: 0.95rem;">
+            <strong style="color: #0366d6;">💡 画像生成エンジニアリング：</strong><br>
+            <p style="margin-top: 10px;">「具体的にどんなコードを書けばいいのか？」記事テキストからプロンプトを抽出し、APIで画像を生成・保存するまでのスクリプト構成と注意点はこちら。</p>
+            <a href="ai-image-generation-workflow.html" style="display: inline-block; margin-top: 5px; font-weight: bold; color: #0366d6; text-decoration: underline;">
+                👉 AIによる「アイキャッチ自動量産」ワークフローを読む
+            </a>
+        </div>
+
+        <h2>GitHub Actionsでデプロイまで自動化</h2>
+        <p>これらの処理をGitHub Actions（第11回）に組み込みます。あなたが「新しい記事のネタ」をGitにプッシュするだけで、クラウド上でAIが記事を書き、画像プロンプトを作り、画像を生成し、HTMLを整形し、最終的なサイトデータを公開（デプロイ）する。この「完全放置」の量産体制こそが、コストゼロで巨大なメディア資産を築くための最強の武器となります。</p>
     </article>
 
-    <nav class="post-nav" style="display: flex; justify-content: space-between; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee;">
-        <a href="76.html" style="text-decoration: none; color: #f39c12; font-weight: bold;">← 前のページへ</a>
-        <a href="78.html" style="text-decoration: none; color: #f39c12; font-weight: bold;">次のページへ →</a>
+    <nav class="post-nav" style="display: flex; justify-content: space-between; align-items: center; margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee;">
+        <a href="76.html" style="text-decoration: none; color: #f39c12; font-weight: bold; flex: 1; text-align: left;">← [76. 広告運用の自動化]</a>
+        <a href="78.html" style="text-decoration: none; color: #f39c12; font-weight: bold; flex: 1; text-align: right;">[78. 外注化のAI化] →</a>
     </nav>
 
     <section class="article-footer-nav">
@@ -55,7 +155,7 @@
             <li><a href="67.html">67. Python×AIで記事を自動投稿する仕組み</a></li>
             <li><a href="68.html">68. 複数サイトを同時に育てるポートフォリオ戦略</a></li>
             <li><a href="69.html">69. AIエージェントによる自動リサーチとトレンドキャッチ</a></li>
-            <li><a href="70.html">70. API連携：最新AIモデルをサイト運用に組み込む方法</a></li>
+            <li><a href="70.html">70. API連携：最新AIモデルを組み込む方法</a></li>
             <li><a href="71.html">71. データの自動バックアップと復旧体制の構築</a></li>
             <li><a href="72.html">72. 検索順位の自動監視：変動をいち早く察知する</a></li>
             <li><a href="73.html">73. SNS自動投稿システム：流入経路の多角化</a></li>
@@ -67,30 +167,28 @@
             <li><a href="79.html">79. サーバーレス構成の検討：さらなる安定性と速度を求めて</a></li>
             <li><a href="80.html">80. 第5章まとめ：AIに任せられることはすべて任せる</a></li>
         </ul>
-
-        <h3>次のカテゴリー（第6章：新時代のサイト運営・未来戦略編）の記事</h3>
-        <ul class="vertical-article-list">
-            <li><a href="81.html">81. AIによるパーソナライズ：読者ごとに最適化された体験</a></li>
-        </ul>
-
-        <div style="margin-top: 40px; text-align: center;">
-            <a href="index.html" style="color: #666; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid #ddd;">
-                他のカテゴリーの記事を読む（トップページへ戻る）
-            </a>
-        </div>
     </section>
 </main>
 
 <footer class="main-footer">
     <div class="container">
-        <div style="margin-bottom: 20px;">
-            <a href="hosting-comparison-guide.html" style="color: #bbb; text-decoration: none; font-size: 0.85rem;">
-                Webサイト構築における無料と有料の真実：GitHubからWordPressへの移行ガイド
-            </a>
-        </div>
+        <a href="https://tomokazu-hoshi.github.io/migration-guide.html" class="migration-banner">
+            🚀 移行ガイド：GitHubからWordPressへ
+        </a>
         <p>&copy; 2026 Zero-Cost SEO - 星 友和</p>
     </div>
 </footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('full-screen-menu').classList.toggle('open');
+        if (document.getElementById('full-screen-menu').classList.contains('open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+</script>
 
 </body>
 </html>
