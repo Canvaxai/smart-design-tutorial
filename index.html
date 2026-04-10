@@ -1,63 +1,106 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H56XHD5MLW"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-H56XHD5MLW');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zero-Cost SEO | 技術とAIで資産サイトを構築する</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <title>Zero-Cost SEO | iPhoneで完結する副業戦略</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f7f9f9;
+            color: #1c2938;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1da1f2;
+            color: white;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0; font-size: 1.3rem; }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+        .section-title {
+            margin: 30px 0 15px;
+            padding-left: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        /* 100記事用：グレー */
+        .title-gray { border-left: 6px solid #657786; color: #657786; }
+        .grid-gray {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 8px;
+            padding: 0;
+            list-style: none;
+        }
+        .grid-gray li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f3f5;
+            border: 1px solid #ccd6dd;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #657786;
+            font-weight: bold;
+            font-size: 0.8rem;
+            min-height: 45px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        /* 移行ガイド用：水色 */
+        .title-water { border-left: 6px solid #4b90e2; color: #4b90e2; }
+        .grid-water {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            padding: 0;
+            list-style: none;
+        }
+        .grid-water li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e8f5fe;
+            border: 1px solid #4b90e2;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #4b90e2;
+            font-weight: bold;
+            font-size: 0.9rem;
+            min-height: 50px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            color: #657786;
+        }
+    </style>
 </head>
 <body>
-
-<div id="full-screen-menu">
-    <div class="menu-close" onclick="toggleMenu()">×</div>
-    <ul class="menu-list">
-        <li><a href="index.html">🏠 トップページに戻る</a></li>
-        <li><a href="chapter1.html">第1章：インフラ構築編</a></li>
-        <li><a href="migration-guide.html">🚀 WordPress移行ガイド</a></li>
+<header><h1>Zero-Cost SEO 実況サイト</h1></header>
+<main>
+    <div class="section-title title-gray">1. SEO実況 100記事（Chapter別）</div>
+    <ul class="grid-water" style="margin-bottom: 20px;">
+        <li><a href="chapter1.html">第1章：基礎構築編</a></li>
     </ul>
-</div>
-
-<header class="main-header">
-    <div class="container">
-        <h1>Zero-Cost SEO</h1>
-        <p>技術とAIで、コストゼロの資産サイトを構築する</p>
-        <button class="search-trigger" onclick="toggleMenu()">🔍 メニュー</button>
-    </div>
-</header>
-
-<main class="container">
-    <a href="chapter1.html" class="chapter-card">
-        <h2>第1章：インフラ構築編</h2>
-        <p>維持費0円の強固な土台作り。</p>
-    </a> 
-    <a href="migration-guide.html" class="chapter-card special-card">
-        <span class="badge">EXTRA GUIDE</span>
-        <h2>GitHub → WordPress 移行ガイド</h2>
-        <p>有料環境へ移行する全技術。</p>
-    </a>
+    <div class="section-title title-water">2. GitHub 移行・構築記録</div>
+    <ul class="grid-water">
+        <li><a href="migration-ch1.html">第1章：移行決断と戦略</a></li>
+    </ul>
 </main>
-
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2026 Zero-Cost SEO - 星 友和</p>
-    </div>
-</footer>
-
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById('full-screen-menu');
-        menu.classList.toggle('open');
-        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : 'auto';
-    }
-</script>
-
+<footer><p>&copy; 2026 Tomokazu Hoshi</p></footer>
 </body>
 </html>
