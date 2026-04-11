@@ -1,63 +1,78 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H56XHD5MLW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H56XHD5MLW');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第5章：デザイン・機能実装編 | WordPress移行ガイド</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 移行ガイド専用の上書きスタイル：ヘッダーを水色にする */
+        .main-header {
+            background: #3498db !important;
+        }
+    </style>
 </head>
-<body class="migration-page">
+<body>
 
 <header class="main-header">
     <div class="container">
         <h1>Zero-Cost SEO</h1>
-        <p>特別ガイド：インフラ準備</p>
+        <p>特別ガイド：WordPress移行戦略</p>
     </div>
 </header>
 
 <main class="container">
-    <nav class="breadcrumb-nav" style="margin: 20px 0;">
+    <nav>
         <a href="migration-guide.html" class="back-link">← 移行ガイド目次へ戻る</a>
     </nav>
     
     <article class="post-content">
-        <h1 style="font-size: 2rem; font-weight: bold; margin-top: 0;">第5章：デザイン・機能実装編</h1>
+        <h1>第5章：デザイン・機能実装編</h1>
         <p>WordPressならではの機能を最大限に活用。GitHub Pages時代には難しかったUI/UXの実装を行います。</p>
     </article>
 
     <section class="category-section">
-        <h2 style="font-size: 1.2rem; font-weight: bold; margin-bottom: 25px;">第5章：全記事リスト</h2>
-        <div class="article-card-list">
-            <a href="migration-17.html" class="migration-article-item">
-                <div class="blue-circle">17</div>
-                <div>
-                    <span class="card-title">WordPressプラグインの厳選と最小構成</span>
-                    <span class="card-desc">速度を維持するために必要な「本当に役立つ」プラグイン。</span>
-                </div>
-            </a>
-            <a href="migration-18.html" class="migration-article-item">
-                <div class="blue-circle">18</div>
-                <div>
-                    <span class="card-title">ウィジェットとメニューの再構築</span>
-                    <span class="card-desc">回遊率を高めるためのサイドバーとナビゲーション設計。</span>
-                </div>
-            </a>
-            <a href="migration-19.html" class="migration-article-item">
-                <div class="blue-circle">19</div>
-                <div>
-                    <span class="card-title">高速化設定：GitHub Pages並みの速度へ</span>
-                    <span class="card-desc">キャッシュ設定とコードの最適化で表示時間を短縮。</span>
-                </div>
-            </a>
-            <a href="migration-20.html" class="migration-article-item">
-                <div class="blue-circle">20</div>
-                <div>
-                    <span class="card-title">コンタクトフォームと分析ツールの再設定</span>
-                    <span class="card-desc">GA4とSearch Consoleの計測を確実に行う。</span>
-                </div>
-            </a>
-        </div>
+        <h2 style="font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; color: #2c3e50;">第5章：全記事リスト</h2>
+        
+        <a href="migration-17.html" class="migration-article-item">
+            <div class="blue-circle">17</div>
+            <div>
+                <span style="font-weight: bold; color: #2c3e50; display: block;">WordPressプラグインの厳選と最小構成</span>
+                <span style="font-size: 0.85rem; color: #888;">速度を維持するために必要な「本当に役立つ」プラグイン。</span>
+            </div>
+        </a>
+
+        <a href="migration-18.html" class="migration-article-item">
+            <div class="blue-circle">18</div>
+            <div>
+                <span style="font-weight: bold; color: #2c3e50; display: block;">ウィジェットとメニューの再構築</span>
+                <span style="font-size: 0.85rem; color: #888;">回遊率を高めるためのサイドバーとナビゲーション設計。</span>
+            </div>
+        </a>
+
+        <a href="migration-19.html" class="migration-article-item">
+            <div class="blue-circle">19</div>
+            <div>
+                <span style="font-weight: bold; color: #2c3e50; display: block;">高速化設定：GitHub Pages並みの速度へ</span>
+                <span style="font-size: 0.85rem; color: #888;">キャッシュ設定とコードの最適化で表示時間を短縮。</span>
+            </div>
+        </a>
+
+        <a href="migration-20.html" class="migration-article-item">
+            <div class="blue-circle">20</div>
+            <div>
+                <span style="font-weight: bold; color: #2c3e50; display: block;">コンタクトフォームと分析ツールの再設定</span>
+                <span style="font-size: 0.85rem; color: #888;">GA4とSearch Consoleの計測を確実に行う。</span>
+            </div>
+        </a>
     </section>
 </main>
 
